@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+const PORT = process.env.PORT || 5000;
 
 import postRoutes from "./routes/posts.js";
 
@@ -16,7 +17,6 @@ app.use(cors());
 app.use("/posts", postRoutes);
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
-const PORT = process.env.PORT || 5000;
 
 mongoose.set("strictQuery", true);
 mongoose
